@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Irfanullah — Web Developer & Graphic Designer. Websites, visual identities and digital experiences.">
+<title>Irfanullah | Web Developer & Graphic Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0d10;--panel:#14161b;--panel2:#1a1c22;--text:#f5f5f3;--muted:#a1a3ac;--lime:#c5ff4a;--line:#2b2d34;--purple:#a58cff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+.container{width:min(1160px,91%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(12,13,16,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.brand{font:700 22px "Space Grotesk";letter-spacing:-1px}.brand b{color:var(--lime)}
+.navlinks{display:flex;gap:30px;align-items:center;font-size:13px;color:#d6d6da}
+.navlinks a:hover{color:var(--lime)}
+.nav-cta{border:1px solid #484a52;padding:10px 17px;border-radius:999px}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 12px}
+.hero{padding:95px 0 82px;position:relative}
+.hero:before{content:"";position:absolute;width:520px;height:520px;right:-120px;top:0;background:radial-gradient(circle,rgba(165,140,255,.16),transparent 68%);pointer-events:none}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--lime);font-size:12px;letter-spacing:1.8px;text-transform:uppercase}
+.eyebrow:before{content:"";width:25px;height:1px;background:var(--lime)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+h1{font:700 clamp(3.5rem,8.2vw,7.7rem)/.95 "Space Grotesk";letter-spacing:-.075em;margin:26px 0}
+h1 span{color:var(--lime)}
+.hero-copy{max-width:600px;color:#c2c3c9;font-size:18px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:12px;border-radius:999px;padding:13px 20px;font-weight:700;font-size:13px;transition:.25s}
+.btn-primary{background:var(--lime);color:#11140a}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 30px #c5ff4a30}
+.btn-ghost{border:1px solid #454750;color:white}.btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
+.hero-visual{position:relative;min-height:390px;display:grid;place-items:center}
+.orbit{width:310px;height:310px;border:1px solid #373943;border-radius:50%;position:absolute;animation:spin 24s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #343640;border-radius:50%;inset:28px}
+.orbit:after{inset:60px;border-color:#4a4c56}
+.orbit-dot{width:13px;height:13px;background:var(--lime);border-radius:50%;position:absolute;top:22px;left:70px;box-shadow:0 0 22px var(--lime)}
+.profile-card{width:245px;height:290px;background:linear-gradient(145deg,#282a33,#15171d);border:1px solid #42444d;border-radius:26px;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;padding:22px;transform:rotate(-5deg);box-shadow:0 30px 90px #0008}
+.profile-mark{width:90px;height:90px;border-radius:22px;background:var(--lime);color:#111;display:grid;place-items:center;font:700 38px "Space Grotesk";letter-spacing:-5px}
+.profile-card .card-name{font:700 25px "Space Grotesk";line-height:1.1}
+.profile-card small{color:#aeb0b8;font-size:11px;letter-spacing:1px}
+.float-tag{position:absolute;z-index:3;background:#20222a;border:1px solid #3a3c46;border-radius:14px;padding:12px 15px;font-size:12px;box-shadow:0 10px 35px #0005}
+.tag-one{top:50px;right:0}.tag-two{bottom:40px;left:0}.float-tag b{color:var(--lime);display:block;font-size:14px}
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);padding:25px 0}
+.stat{padding:0 25px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border:0}
+.stat strong{font:700 28px "Space Grotesk";color:var(--lime)}.stat span{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+section{padding:100px 0}
+.section-top{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:42px}
+.section-top h2{font:700 clamp(2.6rem,5vw,4.6rem)/1 "Space Grotesk";letter-spacing:-.07em}
+.section-top p{color:var(--muted);font-size:14px;max-width:350px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px;min-height:250px;transition:.3s}
+.service:hover{transform:translateY(-6px);border-color:#5c604a;background:#191c20}
+.service-icon{width:48px;height:48px;border-radius:15px;background:#252a20;color:var(--lime);display:grid;place-items:center;font-size:22px;margin-bottom:26px}
+.service h3{font:600 21px "Space Grotesk";margin-bottom:10px}
+.service p{color:var(--muted);font-size:13px}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.project{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--panel);transition:.3s}
+.project:hover{transform:translateY(-5px);border-color:#555761}
+.project-art{height:280px;display:grid;place-items:center;position:relative;overflow:hidden}
+.art-a{background:#d5ff6a}.art-b{background:#d5c7ff}.art-c{background:#ffcbb5}.art-d{background:#b9e5dc}
+.mock-window{width:75%;height:70%;background:#101218;border-radius:13px;box-shadow:0 20px 40px #0003;overflow:hidden;transform:rotate(-3deg);border:1px solid #222}
+.mock-bar{height:25px;background:#24262d;display:flex;gap:5px;align-items:center;padding:0 10px}.mock-bar i{width:5px;height:5px;border-radius:50%;background:#666}
+.mock-content{padding:17px;color:white}.mock-content .tiny{font-size:7px;color:#bfc0c5}.mock-content .mock-title{font:700 22px "Space Grotesk";line-height:1.1;margin:10px 0}.mock-button{display:inline-block;background:var(--lime);color:#111;font-size:7px;padding:5px 9px;border-radius:20px}
+.brand-art{width:190px;height:190px;border:2px solid #181818;border-radius:50%;display:grid;place-items:center;position:relative;color:#181818;font:700 40px "Space Grotesk";letter-spacing:-7px;transform:rotate(10deg)}
+.brand-art:before{content:"";position:absolute;width:235px;height:65px;border:1px solid #181818;border-radius:50%;transform:rotate(-35deg)}
+.poster{width:170px;height:220px;background:#17191e;color:#f8f6f0;display:flex;flex-direction:column;justify-content:space-between;padding:15px;transform:rotate(6deg);box-shadow:12px 14px 0 #0002}
+.poster b{font:700 31px/.9 "Space Grotesk";letter-spacing:-2px}.poster span{font-size:8px;letter-spacing:2px}
+.app-tiles{display:grid;grid-template-columns:repeat(3,60px);gap:10px;transform:rotate(-8deg)}
+.app-tiles i{height:60px;border-radius:17px;background:#1b1d22;border:1px solid #333;display:grid;place-items:center;color:#d5ff6a;font-size:20px}
+.project-info{padding:22px 25px;display:flex;justify-content:space-between;gap:15px;align-items:center}
+.project-info h3{font:600 20px "Space Grotesk"}.project-info p{color:var(--muted);font-size:12px;margin-top:4px}
+.project-number{font:12px "Space Grotesk";color:var(--lime)}
+.about-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px;border-top:1px solid var(--line);padding-top:45px}
+.about-label{font-size:12px;color:var(--lime);letter-spacing:1.5px;text-transform:uppercase}
+.about-copy{font:500 clamp(1.5rem,3.5vw,3rem)/1.25 "Space Grotesk";letter-spacing:-.04em}
+.about-copy em{font-style:normal;color:var(--lime)}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.skills span{border:1px solid #393b44;border-radius:999px;padding:9px 15px;font-size:12px;color:#c9cad0}
+.contact-box{background:linear-gradient(135deg,#1c1e25,#121318);border:1px solid #343640;border-radius:28px;padding:55px}
+.contact-box h2{font:700 clamp(2.7rem,7vw,6.2rem)/.95 "Space Grotesk";letter-spacing:-.07em;margin:20px 0 30px}
+.contact-box h2 span{color:var(--lime)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-details{display:flex;flex-direction:column;gap:18px}
+.contact-item{border-top:1px solid #373943;padding-top:15px}
+.contact-item small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.5px;margin-bottom:5px}
+.contact-item a{font-size:14px;color:var(--lime);overflow-wrap:anywhere}
+form{display:flex;flex-direction:column;gap:12px}
+input,textarea{width:100%;background:#0d0e12;border:1px solid #393b44;border-radius:12px;padding:14px;color:white;outline:none}
+input:focus,textarea:focus{border-color:var(--lime)}textarea{resize:vertical;min-height:115px}
+form button{border:0;cursor:pointer;justify-content:center}
+footer{padding:27px 0;display:flex;justify-content:space-between;gap:15px;color:#777983;font-size:11px;border-top:1px solid var(--line);margin-top:35px}
+footer a{color:var(--lime)}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:20px}.hero-visual{min-height:350px}.hero{padding-top:65px}.services{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:25px}.contact-grid{grid-template-columns:1fr}.contact-box{padding:35px}}
+@media(max-width:600px){.nav{height:68px}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:#101116;padding:22px 5%;flex-direction:column;gap:18px;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.nav-cta{width:max-content}.hero{padding:55px 0}.hero-copy{font-size:16px}h1{font-size:clamp(3.4rem,16vw,5.8rem)}.hero-visual{min-height:320px}.orbit{width:260px;height:260px}.profile-card{width:210px;height:260px}.tag-one{right:-5px}.tag-two{left:-5px}.stats{padding:20px 0}.stat{padding:0 12px}.stat strong{font-size:22px}.stat span{font-size:10px}section{padding:70px 0}.section-top{align-items:start;flex-direction:column;margin-bottom:28px}.services,.projects{grid-template-columns:1fr}.project-art{height:240px}.contact-box{padding:25px 20px}.contact-box h2{font-size:clamp(2.8rem,13vw,4.8rem)}footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+ <div class="container nav">
+  <a class="brand" href="#home">IRFAN<span><b>U.</b></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">MENU ☰</button>
+  <nav class="navlinks" id="navlinks">
+   <a href="#home">Home</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#about">About</a><a class="nav-cta" href="#contact">Let's talk ↗</a>
+  </nav>
+ </div>
+</header>
+<main>
+<section class="hero container" id="home">
+ <div class="hero-grid">
+  <div>
+   <div class="eyebrow">Web developer & graphic designer</div>
+   <h1>Designing<br>ideas into<br><span>reality.</span></h1>
+   <p class="hero-copy">Hi, I'm Irfanullah. I create modern websites and thoughtful graphic designs that help brands stand out and connect with people.</p>
+   <div class="hero-actions"><a class="btn btn-primary" href="#projects">Explore my work <span>↘</span></a><a class="btn btn-ghost" href="#contact">Contact me ↗</a></div>
+  </div>
+  <div class="hero-visual" aria-label="Abstract creative profile graphic">
+   <div class="orbit"><span class="orbit-dot"></span></div>
+   <div class="profile-card"><div class="profile-mark">IU.</div><div><div class="card-name">Irfanullah</div><small>DESIGN · CODE · CREATE</small></div></div>
+   <div class="float-tag tag-one"><b>01 / DIGITAL</b>Web experiences</div>
+   <div class="float-tag tag-two"><b>02 / VISUAL</b>Creative design</div>
+  </div>
+ </div>
+</section>
+<div class="container"><div class="stats">
+ <div class="stat"><strong>Web</strong><span>Development</span></div><div class="stat"><strong>Graphic</strong><span>Design</span></div><div class="stat"><strong>Creative</strong><span>Digital solutions</span></div>
+</div></div>
+<section class="container reveal" id="services">
+ <div class="section-top"><h2>What I<br>can do.</h2><p>From the first sketch to a polished website, I turn ideas into clear, creative and useful digital experiences.</p></div>
+ <div class="services">
+  <article class="service"><div class="service-icon">⌘</div><h3>Web Development</h3><p>Responsive, modern websites built with clean structure and smooth interactions.</p></article>
+  <article class="service"><div class="service-icon">✳</div><h3>Graphic Design</h3><p>Creative visuals, social media graphics and designs that communicate clearly.</p></article>
+  <article class="service"><div class="service-icon">◈</div><h3>Brand Identity</h3><p>Logo concepts, color systems and visual direction to make a brand recognizable.</p></article>
+ </div>
+</section>
+<section class="container reveal" id="projects">
+ <div class="section-top"><h2>Featured<br>projects.</h2><p>A selection of concept work showing different directions in web, branding and visual design.</p></div>
+ <div class="projects">
+  <article class="project"><div class="project-art art-a"><div class="mock-window"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-content"><span class="tiny">CREATIVE DIGITAL STUDIO</span><div class="mock-title">Make your<br>next move.</div><span class="mock-button">Discover more ↗</span></div></div></div><div class="project-info"><div><h3>Studio Website</h3><p>Web design / Front-end concept</p></div><span class="project-number">01</span></div></article>
+  <article class="project"><div class="project-art art-b"><div class="brand-art">F / F</div></div><div class="project-info"><div><h3>Form & Flow</h3><p>Brand identity / Logo concept</p></div><span class="project-number">02</span></div></article>
+  <article class="project"><div class="project-art art-c"><div class="poster"><span>DESIGN CULTURE / 26</span><b>CREATE<br>YOUR<br>OWN<br>PATH.</b><span>VISUAL EXPERIMENT — IRFANULLAH</span></div></div><div class="project-info"><div><h3>Creative Poster</h3><p>Graphic design / Poster</p></div><span class="project-number">03</span></div></article>
+  <article class="project"><div class="project-art art-d"><div class="app-tiles"><i>✦</i><i>◉</i><i>↗</i><i>⌁</i><i>✳</i><i>◈</i></div></div><div class="project-info"><div><h3>App UI Concept</h3><p>UI design / Interface direction</p></div><span class="project-number">04</span></div></article>
+ </div>
+</section>
+<section class="container reveal" id="about">
+ <div class="section-top"><h2>Behind the<br>pixels.</h2><p>A little about me and the way I approach creative work.</p></div>
+ <div class="about-grid"><div class="about-label">01 — About me</div><div><p class="about-copy">I'm Irfanullah, a <em>web developer and graphic designer</em> from Afghanistan. I enjoy combining thoughtful design with technology to build work that feels simple, purposeful and memorable.</p><div class="skills"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>Graphic Design</span><span>Branding</span><span>Creative Thinking</span></div></div></div>
+</section>
+<section class="container reveal" id="contact">
+ <div class="contact-box">
+  <div class="eyebrow">Have a project in mind?</div><h2>Let's create<br>something <span>great.</span></h2>
+  <div class="contact-grid">
+   <div class="contact-details">
+    <div class="contact-item"><small>PHONE / WHATSAPP</small><a href="https://wa.me/93780197833" target="_blank" rel="noopener">0780197833 ↗</a></div>
+    <div class="contact-item"><small>EMAIL</small><a href="mailto:irfanyousofzai342@gmail.com">irfanyousofzai342@gmail.com ↗</a></div>
+    <div class="contact-item"><small>LOCATION</small><span>Afghanistan · Available worldwide</span></div>
+   </div>
+   <form id="contactForm">
+    <input type="text" id="name" placeholder="Your name" required>
+    <input type="email" id="email" placeholder="Your email" required>
+    <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+    <button class="btn btn-primary" type="submit">Send message via email ↗</button>
+   </form>
+  </div>
+ </div>
+ <footer><span>© <span id="year">2026</span> Irfanullah. All rights reserved.</span><span>Made with creativity <a href="#home">↑ Back to top</a></span></footer>
+</section>
+</main>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'CLOSE ✕':'MENU ☰'});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='MENU ☰'}));
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('name').value.trim(),em=document.getElementById('email').value.trim(),m=document.getElementById('message').value.trim();const subject=encodeURIComponent('Portfolio inquiry from '+n);const body=encodeURIComponent('Name: '+n+'\nEmail: '+em+'\n\nProject details:\n'+m);window.location.href='mailto:irfanyousofzai342@gmail.com?subject='+subject+'&body='+body});
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
